@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Add your import statements for View and Game here\nconst Game = __webpack_require__(/*! ../ttt_node/game.js */ \"./ttt_node/game.js\");\nconst View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\");\n\n// newGame.start();\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const ttt = document.querySelector(\".ttt\");\n    function setupBoard(){\n      let ul = document.createElement(\"ul\");\n      ttt.appendChild(ul);\n      let li = document.createElement(\"li\")\n      // ul.appendChild(li)\n      for (let i = 0; i < 9; i++) {\n        ul.appendChild(li);\n      };\n      const newGame = new Game();\n    };\n  // Your code here\n});\n\n\n//# sourceURL=webpack://tic_tac_toe/./src/index.js?");
+eval("// Add your import statements for View and Game here\nconst Game = __webpack_require__(/*! ../ttt_node/game.js */ \"./ttt_node/game.js\");\n\nconst View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\");\n\n// newGame.start();\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n\n  const newGame = new Game();\n  const ttt = document.querySelector(\".ttt\");\n  // debugger\n  const newView = new View(newGame, ttt);\n  \n\n  // function setupBoard(){\n    \n  // };\n  // Your code here\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n});\n\n\n//# sourceURL=webpack://tic_tac_toe/./src/index.js?");
 
 /***/ }),
 
@@ -23,10 +23,9 @@ eval("// Add your import statements for View and Game here\nconst Game = __webpa
 /*!*************************!*\
   !*** ./src/ttt-view.js ***!
   \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass View {\n  constructor(game, el) {\n  }\n\n  setupBoard() {\n    \n  }\n\n  handleClick(e) {\n  }\n\n  makeMove(square) {\n  }\n\n  handleGameOver() {\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (View);\n\n\n//# sourceURL=webpack://tic_tac_toe/./src/ttt-view.js?");
+eval("class View {\n  constructor(game, el) {\n    // debugger\n    this.game = game;\n    this.el = el;\n    this.setupBoard();\n    // debugger\n  }\n  \n  setupBoard() {\n    // const ttt = document.querySelector(\".ttt\");\n    let ul = document.createElement(\"ul\");\n    // debugger\n    this.el.appendChild(ul);\n    \n    // ul.appendChild(li)\n    for (let i = 0; i < 9; i++) {\n      let li = document.createElement(\"li\");\n      ul.appendChild(li);\n      li.appendChild(document.createTextNode(i));\n    };\n  }\n  \n  handleClick(e) {\n  }\n\n  makeMove(square) {\n  }\n  \n  handleGameOver() {\n  }\n}\nmodule.exports = View;\n// export default View;\n\n//# sourceURL=webpack://tic_tac_toe/./src/ttt-view.js?");
 
 /***/ }),
 
@@ -85,35 +84,6 @@ eval("const MoveError = function (msg) { this.msg = msg; };\n\n// MoveError real
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	

@@ -1,1 +1,17 @@
 /* Your code here */
+ul {
+    display: flex;
+    width: 300px;
+    padding-inline-start: 0px;
+    flex-wrap: wrap;
+    margin: 30px, auto;
+    border: 5px solid black;
+    list-style: none;
+}
+li {
+    background: green;
+    cursor: pointer;
+    border: 5px solid black;
+    height: 90px;
+    width: 90px;
+}
