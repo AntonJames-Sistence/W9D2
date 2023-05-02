@@ -5,6 +5,8 @@ class View {
     this.el = el;
     this.setupBoard();
     // debugger
+    this.el.addEventListener('click', this.handleClick)
+
   }
 
   setupBoard() {
@@ -17,24 +19,24 @@ class View {
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
       let li = document.createElement("li");
-      let pos = [i, j];
-      li.dataset.position = [pos]
+      
+      // li.dataset.position = `[${i},${j}]`
+      li.dataset.position = JSON.stringify([i, j]);
       ul.appendChild(li);
       // li.appendChild(document.createTextNode([i , j]));
       };
     };
   }
 
-  handleClick(e) {
-    this.el.addEventListener('click', (e) => {
-      e.preventDefault();
-      this.game.protoype.playMove([0,0]);
-    })
+  handleClick(event) {
+    const ele = event.target; // li datapos 5,2
+    makeMove(ele);
   }
 
-  makeMove(square) {
+  makeMove(square) { // li
     // let element = e.target
     // element.classList.toggle("done")
+    this.game.playMove(pos);
   }
 
   handleGameOver() {
@@ -42,3 +44,5 @@ class View {
 }
 module.exports = View;
 // export default View;
+
+
