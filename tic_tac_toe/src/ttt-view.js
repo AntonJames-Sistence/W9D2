@@ -30,12 +30,12 @@ class View {
 
   handleClick(event) {
     const ele = event.target; // li datapos 5,2
-    makeMove(ele);
+    this.makeMove(ele);
   }
 
   makeMove(square) { // li
-    // let element = e.target
-    // element.classList.toggle("done")
+    console.log(square);
+    debugger
     this.game.playMove(pos);
   }
 
