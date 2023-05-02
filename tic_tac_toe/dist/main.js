@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Add your import statements for View and Game here\nconst Game = __webpack_require__(/*! ../ttt_node/game.js */ \"./ttt_node/game.js\");\nconst View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\");\nconst newGame = new Game();\n// newGame.start();\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  // Your code here\n});\n\n//# sourceURL=webpack://tic_tac_toe/./src/index.js?");
+eval("// Add your import statements for View and Game here\nconst Game = __webpack_require__(/*! ../ttt_node/game.js */ \"./ttt_node/game.js\");\nconst View = __webpack_require__(/*! ./ttt-view.js */ \"./src/ttt-view.js\");\n\n// newGame.start();\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    const ttt = document.querySelector(\".ttt\");\n    function setupBoard(){\n      let ul = document.createElement(\"ul\");\n      ttt.appendChild(ul);\n      let li = document.createElement(\"li\")\n      // ul.appendChild(li)\n      for (let i = 0; i < 9; i++) {\n        ul.appendChild(li);\n      };\n      const newGame = new Game();\n    };\n  // Your code here\n});\n\n\n//# sourceURL=webpack://tic_tac_toe/./src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("// Add your import statements for View and Game here\nconst Game = __webpa
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass View {\n  constructor(game, el) {\n  }\n  \n  setupBoard() {\n  }\n  \n  handleClick(e) {\n  }\n\n  makeMove(square) {\n  }\n  \n  handleGameOver() {\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (View);\n\n//# sourceURL=webpack://tic_tac_toe/./src/ttt-view.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass View {\n  constructor(game, el) {\n  }\n\n  setupBoard() {\n    \n  }\n\n  handleClick(e) {\n  }\n\n  makeMove(square) {\n  }\n\n  handleGameOver() {\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (View);\n\n\n//# sourceURL=webpack://tic_tac_toe/./src/ttt-view.js?");
 
 /***/ }),
 
